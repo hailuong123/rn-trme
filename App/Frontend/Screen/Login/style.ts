@@ -16,6 +16,15 @@ const style = StyleSheet.create({
   fontTest: {
     fontFamily: APPFONT.RALEWAYBOLD,
     fontSize: 20
+  },
+  logoLogin: {
+    width: 60,
+    height: 100,
+    marginTop: -100,
+    resizeMode: 'contain'
+  },
+  inputText: {
+    height: 30
   }
 });
 

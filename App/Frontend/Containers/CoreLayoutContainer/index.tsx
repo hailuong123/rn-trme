@@ -26,7 +26,7 @@ class CoreLayoutContainer extends Component<Props, State> {
     const bgApp = require('../../../Assets/Images/bgApp.jpg');
     return (
       <View>
-        <View style={styles.viewBg}>
+        <View style={[styles.viewBg, bgScreen]}>
           <Image 
             style={styles.bgDefault} 
             source={bgApp} /> 
