@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import {
   View,
@@ -7,6 +7,7 @@ import {
 
 import CoreHeader from './CoreHeader';
 import styles from './styles';
+
 interface Props {
   bgScreen?: any;
   children?: any;
@@ -19,8 +20,11 @@ interface Props {
 
 interface State {}
 
-class CoreLayoutContainer extends Component<Props, State> {
+class CoreLayoutContainer extends React.Component<Props, State> {
 
+  componentWillMount() {
+    console.log(1)
+  }
   render() {
     const { children, leftAction, rightAction, titleScreen, headerStyle, bgScreen } = this.props;
     const bgApp = require('../../../Assets/Images/bgApp.jpg');
@@ -31,7 +35,7 @@ class CoreLayoutContainer extends Component<Props, State> {
             style={styles.bgDefault} 
             source={bgApp} /> 
         </View>
-        <CoreHeader 
+        <CoreHeader
           titleScreen={titleScreen} 
           leftAction={leftAction} 
           rightAction={rightAction} 
@@ -41,14 +45,9 @@ class CoreLayoutContainer extends Component<Props, State> {
         <View style={styles.content}>
           {children}
         </View> 
-
-        {
-          /* All Alerts and Notify code here */
-        }
-        
+    
       </View>
     );
   }
 }
-
 export default CoreLayoutContainer;

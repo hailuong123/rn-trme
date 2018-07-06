@@ -9,7 +9,7 @@ import CoreLayoutContainer from '../../Containers/CoreLayoutContainer';
 import styles from './style';
 
 interface Props {
-  actionChangeRoute: Function;
+  actionChangeRoute?: Function;
 }
 
 interface State {}
@@ -17,7 +17,11 @@ interface State {}
 class SplashScreen extends Component<Props, State> {
   componentWillMount() {
     // this.props.actionLogin({ email: 'lal', password: 'gjgj' });
-    this.props.actionChangeRoute();
+    console.log(123);
+    const { actionChangeRoute } = this.props;
+    if (actionChangeRoute) {
+      actionChangeRoute();
+    }
   }
   render() {
     // const bgSplashScreen = require('../../../Assets/Images/bgApp.jpg');

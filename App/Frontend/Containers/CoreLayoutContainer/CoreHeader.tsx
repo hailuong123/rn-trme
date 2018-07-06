@@ -8,7 +8,7 @@ import {
 
 import { iconAdd, iconBack } from '../../../General/globalIcon';
 import styles from './styles';
-import { heightResize } from '../../../General/globalStyles';
+
 interface Props {
   titleScreen?: string;
   leftAction?: Function;

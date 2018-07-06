@@ -1,9 +1,7 @@
 import { StyleSheet, Platform } from 'react-native';
 import { width, heightResize } from '../../../General/globalStyles';
-const IOS = Platform.OS = 'ios';
+const IOS = Platform.OS === 'ios';
 const heightNavBar = heightResize(IOS ? 11.5 : 8.5);
-const topNavBarIOS = heightResize(IOS ? 3 : 0);
-const navBarFit = heightResize(IOS ? 5 : 2);
 
 const styles = StyleSheet.create({
   container: {
@@ -25,6 +23,6 @@ const styles = StyleSheet.create({
     resizeMode: 'stretch',
     width: '100%'
   }
-});
+} as any);
 
 export default styles;

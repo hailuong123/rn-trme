@@ -12,9 +12,10 @@ export const actionLogin = (body: any) => {
 
 export const actionChangeRoute = () => {
   return async () => {
-    let getUser = await store.get(key.SETUSER);
-    console.log(getUser);
+    // let getUser = await store.get(key.SETUSER);
+    let getUser = '';
     setTimeout(function () {
+        console.log(123);
         getUser 
           ? Actions.journey({ type: ActionConst.RESET,  })
           : Actions.login({ type: ActionConst.RESET }); 

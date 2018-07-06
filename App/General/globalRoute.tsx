@@ -1,5 +1,9 @@
 import React from 'react';
-import { Scene, Stack, Router, Actions } from 'react-native-router-flux';
+import { 
+  Scene, 
+  Stack, 
+  Router 
+} from 'react-native-router-flux';
 
 import Login from '../Frontend/Screen/Login';
 import Journey from '../Frontend/Screen/Journey';

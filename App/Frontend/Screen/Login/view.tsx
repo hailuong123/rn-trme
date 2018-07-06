@@ -36,7 +36,7 @@ class Login extends React.Component<Props, State> {
   render() {
     const logo = require('../../../Assets/Images/logo.png');
     return ( 
-      <CoreLayoutContainer titleScreen={'Login'}>
+      <CoreLayoutContainer>
         <View style={style.container}>
           <View>
             <Image 
