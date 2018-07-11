@@ -24,6 +24,11 @@ const style = StyleSheet.create({
     borderBottomWidth: 1
   },
   fieldGroupPassword: {
+    borderColor: 'transparent',
+    borderBottomColor: '#A7AAAC',
+    borderBottomWidth: 1
+  },
+  fieldGroupCfmPassword: {
     borderBottomRightRadius: 5,
     borderBottomLeftRadius: 5,
   },
@@ -51,7 +56,7 @@ const style = StyleSheet.create({
     marginVertical: width(5)
   },
   btnLogin: {
-    width: width(60),
+    width: width(70),
     height: width(15),
     backgroundColor: '#427FBF',
     alignItems: 'center',
@@ -112,7 +117,7 @@ const style = StyleSheet.create({
     bottom: width(20),
     width: width(100),
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   textBottom: {
@@ -123,8 +128,7 @@ const style = StyleSheet.create({
   line: {
     color: '#fff',
     fontSize: width(6),
-    marginTop: -width(1),
-    marginHorizontal: width(2)
+    marginHorizontal: 5
   }
 });
 

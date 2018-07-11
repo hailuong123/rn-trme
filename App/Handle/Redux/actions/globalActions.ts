@@ -7,7 +7,6 @@ export const login = (body: any) => {
     API.getUser(body)
       .then(
         user => {
-          console.log(user);
           dispatch(requestUserSuccess(user));
         },
         error => {

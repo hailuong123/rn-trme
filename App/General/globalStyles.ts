@@ -17,7 +17,7 @@ export const APPFONT = {
   ROBOTO: 'Roboto-Light',
   ROBOTOBOLD: 'Roboto-Bold',
   RALEWAYBOLD: 'Raleway-Bold',
-  RALEWAYNORMAL: 'Raleway-Normal',
+  RALEWAYNORMAL: 'Raleway-Regular',
   RALEWAYTHIN: 'Raleway-Thin',
 }
 

@@ -1,8 +1,8 @@
-import key from '../../../Handle/Redux/lib/constants';
+// import key from '../../../Handle/Redux/lib/constants';
 import { Actions, ActionConst } from 'react-native-router-flux';
 import { login } from '../../../Handle/Redux/actions/globalActions';
 
-const store = require('react-native-simple-store');
+// const store = require('react-native-simple-store');
 
 export const actionLogin = (body: any) => {
   return (dispatch: any) => {
@@ -11,11 +11,12 @@ export const actionLogin = (body: any) => {
 }
 
 export const actionChangeRoute = () => {
-  return async () => {
+  return () => {
     // let getUser = await store.get(key.SETUSER);
     let getUser = '';
+    
     setTimeout(function () {
-        console.log(123);
+      console.log(1);
         getUser 
           ? Actions.journey({ type: ActionConst.RESET,  })
           : Actions.login({ type: ActionConst.RESET }); 

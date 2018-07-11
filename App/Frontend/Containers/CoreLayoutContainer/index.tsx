@@ -22,12 +22,9 @@ interface State {}
 
 class CoreLayoutContainer extends React.Component<Props, State> {
 
-  componentWillMount() {
-    console.log(1)
-  }
   render() {
     const { children, leftAction, rightAction, titleScreen, headerStyle, bgScreen } = this.props;
-    const bgApp = require('../../../Assets/Images/bgApp.jpg');
+    const bgApp = require('../../../Assets/Images/bgLogin.jpg');
     return (
       <View>
         <View style={[styles.viewBg, bgScreen]}>

@@ -12,20 +12,18 @@ import CoreLayoutContainer from '../../Containers/CoreLayoutContainer';
 import TMInput from '../../Components/TMInput';
 import style from './style';
 
-interface Props {
-  actionRouteRegister?: Function;
-};
+interface Props {}
 
 interface State {
-  value: any;
-};
+  value: FieldRegister;
+}
 
-type FieldLogin = {
+type FieldRegister = {
   readonly email: string;
   readonly password: string;
-};
+}
 
-class Login extends React.Component<Props, State> {
+class RegisterScreen extends React.Component<Props, State> {
 
   constructor (props: Props) {
     super(props);
@@ -38,7 +36,7 @@ class Login extends React.Component<Props, State> {
     }
 
     this.onChange = this.onChange.bind(this);
-    this.routeRegister = this.routeRegister.bind(this);
+    this.routeLogin = this.routeLogin.bind(this);
   }
 
   onChange = (e: any, ref: string) => {
@@ -50,9 +48,9 @@ class Login extends React.Component<Props, State> {
       }
     });
   }
-
-  routeRegister = () => {
-    Actions.register({ type: ActionConst.PUSH });
+  
+  routeLogin = () => {
+    Actions.login({ type: ActionConst.BACK });
   }
 
   render() {
@@ -90,35 +88,29 @@ class Login extends React.Component<Props, State> {
                 secureTextEntry={true}
               />
             </View>
+            <View style={[style.fieldGroup, style.fieldGroupCfmPassword]}>
+              <TMInput 
+                ref={'cfmpassword'}
+                onChange={(e: any) => this.onChange(e, 'cfmpassword')}
+                value={this.state.value.password}
+                placeHolder={'CONFORM PASSWORD'}
+                icon={unlock}
+                style={style.inputText}
+                styleicon={style.iconStyle}
+                secureTextEntry={true}
+              />
+            </View>
             <View style={style.btn}>
               <TouchableOpacity style={style.btnLogin}>
-                <Text style={style.textBtn}>LOGIN </Text>
+                <Text style={style.textBtn}>REGISTER </Text>
                 <Text style={style.iconBtn}>{arrowRightCircle}</Text>
-              </TouchableOpacity>
-            </View>
-
-            <View style={style.alginOR}>
-              <View style={[style.borderOr, style.borderOrLeft]}></View>
-              <Text style={style.textOr}>OR CONNECT WITH</Text>
-              <View style={[style.borderOr, style.borderOrRight]}></View>
-            </View>
-            
-
-            <View style={style.fbLogin}>
-              <TouchableOpacity style={style.btnLoginFb}>
-                <Text style={style.iconFb}>{iconFacebook}</Text>
-                <Text style={style.textFb}>LOG IN WITH FACEBOOK</Text>
               </TouchableOpacity>
             </View>
           </View>
 
           <View style={style.bottomScreen}>
-            <TouchableOpacity>
-              <Text style={style.textBottom}>Forgot password?</Text>
-            </TouchableOpacity>
-            <Text style={style.line}>/</Text>
-            <TouchableOpacity onPress={this.routeRegister}>
-              <Text style={style.textBottom}>Create an account</Text>
+            <TouchableOpacity onPress={this.routeLogin}>
+              <Text style={style.textBottom}>Already have an account?</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -127,4 +119,4 @@ class Login extends React.Component<Props, State> {
   }
 }   
 
-export default Login;
+export default RegisterScreen;

@@ -17,7 +17,6 @@ interface State {}
 class SplashScreen extends Component<Props, State> {
   componentWillMount() {
     // this.props.actionLogin({ email: 'lal', password: 'gjgj' });
-    console.log(123);
     const { actionChangeRoute } = this.props;
     if (actionChangeRoute) {
       actionChangeRoute();
