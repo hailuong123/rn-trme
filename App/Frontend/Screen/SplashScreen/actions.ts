@@ -16,7 +16,6 @@ export const actionChangeRoute = () => {
     let getUser = '';
     
     setTimeout(function () {
-      console.log(1);
         getUser 
           ? Actions.journey({ type: ActionConst.RESET,  })
           : Actions.login({ type: ActionConst.RESET }); 
