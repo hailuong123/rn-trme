@@ -1,5 +1,4 @@
 import {
-  PixelRatio,
   StyleSheet,
   Dimensions
 } from 'react-native';
@@ -9,8 +8,8 @@ export const WIDTH_DEVICE = Dimensions.get('window').width;
 export const HEIGHT_DEVICE = Dimensions.get('window').height;
 const MY_RESIZE = GENERAL_RATIO / (HEIGHT_DEVICE / WIDTH_DEVICE); 
 
-export const width = (num: number) => PixelRatio.getPixelSizeForLayoutSize(num);
-export const height = (num: number) => PixelRatio.getPixelSizeForLayoutSize(num);
+export const width = (num: number) => WIDTH_DEVICE * (num / 100);
+export const height = (num: number) => HEIGHT_DEVICE * (num / 100);
 export const heightResize = (num: number) => GENERAL_RATIO * (num * MY_RESIZE / 100);
 
 export const APPFONT = {

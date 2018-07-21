@@ -15,32 +15,42 @@ interface Props {
   rightAction?: Function;
   rightIcon?: any;
   headerStyle?: any;
+  showHeader?: boolean;
 }
 
 interface State {}
 
 class CoreHeader extends Component<Props, State> {
 
+  static defaultProps = {
+    showHeader: true
+  }
+
   leftActionHeader = (action: any) => action;
   rightActionHeader = (action: any) => action;
-
+  
   render() {
-    const { leftAction, rightAction, titleScreen, headerStyle } = this.props;
+    const { showHeader, leftAction, rightAction, titleScreen, headerStyle } = this.props;
     return (
-      <View style={[styles.container, headerStyle]}>
+      <>
         {
-          leftAction
-            ? <TouchableOpacity onPress={() => this.leftActionHeader(leftAction)}>{iconBack}</TouchableOpacity>
-            : <View style={{}} />
+          showHeader &&
+            <View style={[styles.container, styles.titleStyle, headerStyle]}>
+              {
+                leftAction
+                  ? <TouchableOpacity onPress={() => this.leftActionHeader(leftAction)}>{iconBack}</TouchableOpacity>
+                  : <View style={{}} />
+              }
+              <View>
+                <Text numberOfLines={1} style={styles.textTitle}>{titleScreen && titleScreen.toUpperCase()}</Text>
+              </View>
+              {
+                rightAction
+                  && <TouchableOpacity onPress={() => this.rightActionHeader(rightAction)}>{iconAdd}</TouchableOpacity>
+              }
+            </View>
         }
-        <View>
-          <Text numberOfLines={1}>{titleScreen}</Text>
-        </View>
-        {
-          rightAction
-            && <TouchableOpacity onPress={() => this.rightActionHeader(rightAction)}>{iconAdd}</TouchableOpacity>
-        }
-      </View>
+      </>
     );
   }
 }

@@ -6,8 +6,8 @@ import {
   Image
 } from 'react-native';
 import { Actions, ActionConst } from 'react-native-router-flux';
-
-import { mail, unlock, arrowRightCircle, iconFacebook } from '../../../General/globalIcon';
+import Images from '../../../Assets/Images';
+import { mail, unlock, arrowRightCircle } from '../../../General/globalIcon';
 import CoreLayoutContainer from '../../Containers/CoreLayoutContainer';
 import TMInput from '../../Components/TMInput';
 import style from './style';
@@ -54,13 +54,12 @@ class RegisterScreen extends React.Component<Props, State> {
   }
 
   render() {
-    const logo = require('../../../Assets/Images/logo-white.png');
     return (
-      <CoreLayoutContainer>
+      <CoreLayoutContainer bgScreen={Images.bgLoginDark} showHeader={false}>
         <View style={style.container}>
-          <View>
+          <View style={style.posLogo}>
             <Image
-              source={logo}
+              source={Images.logoWhite}
               style={style.logoLogin}
             />
           </View>

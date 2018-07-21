@@ -8,9 +8,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column'
   },
-  headerStyle: {
-    height: 0
-  },
   bgImage: {
     flex: 1,
     resizeMode: 'stretch',

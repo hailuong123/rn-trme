@@ -5,6 +5,7 @@ import {
   ActivityIndicator
 } from 'react-native';
 
+import Images from '../../../Assets/Images';
 import CoreLayoutContainer from '../../Containers/CoreLayoutContainer';
 import styles from './style';
 
@@ -23,9 +24,8 @@ class SplashScreen extends Component<Props, State> {
     }
   }
   render() {
-    // const bgSplashScreen = require('../../../Assets/Images/bgApp.jpg');
     return (
-      <CoreLayoutContainer headerStyle={styles.headerStyle}>
+      <CoreLayoutContainer bgScreen={Images.bgLoginDark} showHeader={false}>
         <ActivityIndicator color='#333' size={0} style={styles.loading} />
       </CoreLayoutContainer>
     );

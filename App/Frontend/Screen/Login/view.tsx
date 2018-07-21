@@ -6,8 +6,8 @@ import {
   Image
 } from 'react-native';
 import { Actions, ActionConst } from 'react-native-router-flux';
-
-import { mail, unlock, arrowRightCircle, iconFacebook } from '../../../General/globalIcon';
+import Images from '../../../Assets/Images';
+import { mail, unlock, arrowRightCircle, icFacebook } from '../../../General/globalIcon';
 import CoreLayoutContainer from '../../Containers/CoreLayoutContainer';
 import TMInput from '../../Components/TMInput';
 import style from './style';
@@ -39,6 +39,7 @@ class Login extends React.Component<Props, State> {
 
     this.onChange = this.onChange.bind(this);
     this.routeRegister = this.routeRegister.bind(this);
+    this.routeJourney = this.routeJourney.bind(this);
   }
 
   onChange = (e: any, ref: string) => {
@@ -55,14 +56,17 @@ class Login extends React.Component<Props, State> {
     Actions.register({ type: ActionConst.PUSH });
   }
 
+  routeJourney = () => {
+    Actions.journey({ type: ActionConst.JUMP });
+  }
+
   render() {
-    const logo = require('../../../Assets/Images/logo-white.png');
     return (
-      <CoreLayoutContainer>
+      <CoreLayoutContainer bgScreen={Images.bgLoginDark} showHeader={false}>
         <View style={style.container}>
-          <View>
+          <View style={style.posLogo}>
             <Image
-              source={logo}
+              source={Images.logoWhite}
               style={style.logoLogin}
             />
           </View>
@@ -91,7 +95,7 @@ class Login extends React.Component<Props, State> {
               />
             </View>
             <View style={style.btn}>
-              <TouchableOpacity style={style.btnLogin}>
+              <TouchableOpacity style={style.btnLogin} onPress={this.routeJourney}>
                 <Text style={style.textBtn}>LOGIN </Text>
                 <Text style={style.iconBtn}>{arrowRightCircle}</Text>
               </TouchableOpacity>
@@ -106,7 +110,7 @@ class Login extends React.Component<Props, State> {
 
             <View style={style.fbLogin}>
               <TouchableOpacity style={style.btnLoginFb}>
-                <Text style={style.iconFb}>{iconFacebook}</Text>
+                <Text style={style.iconFb}>{icFacebook}</Text>
                 <Text style={style.textFb}>LOG IN WITH FACEBOOK</Text>
               </TouchableOpacity>
             </View>

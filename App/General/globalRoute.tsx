@@ -16,7 +16,7 @@ const scenes = () => (
       <Scene key="slashscreen" component={SplashScreen} title="Slashscreen" initial={true} />
       <Scene key="login" component={Login} title="Login" />
       <Scene key="register" component={Register} title="Register" />
-      <Scene key="journey" component={Journey} title="Journey" />
+      <Scene key="journey" component={Journey} title="Journey" type="pop" />
     </Stack>
   </Router>
 );

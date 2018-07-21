@@ -6,12 +6,14 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
   },
   formContainer: {
     width: '100%',
-    paddingHorizontal: width(30),
+    paddingHorizontal: width(15),
+    position: 'absolute',
+    top: width(70)
   },
   fieldGroup: {
     backgroundColor: 'rgba(255,255,255,0.8)',
@@ -36,28 +38,31 @@ const style = StyleSheet.create({
     fontFamily: APPFONT.RALEWAYBOLD,
     fontSize: width(10)
   },
+  posLogo: {
+    position: 'absolute',
+    top: width(30),
+  },
   logoLogin: {
-    width: width(30),
-    height: width(50),
-    marginTop: -width(50),
+    width: width(20),
+    height: width(30),
     resizeMode: 'contain'
   },
   iconStyle: {
     position: 'absolute',
-    top: width(4.5),
-    left: width(3)
+    top: width(3.5),
+    left: width(2)
   },
   inputText: {
-    height: height(20),
-    paddingLeft: width(20)
+    height: height(7),
+    paddingLeft: width(11.5)
   },
   btn: {
     alignItems: 'center',
-    marginVertical: width(5)
+    marginVertical: width(3)
   },
   btnLogin: {
-    width: width(70),
-    height: width(15),
+    width: width(40),
+    height: width(10),
     backgroundColor: '#427FBF',
     alignItems: 'center',
     justifyContent: 'center',
@@ -79,55 +84,36 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginVertical: width(10)
+    marginVertical: width(3)
   },
   borderOr: {
-    height: width(0.5),
-    width: width(25),
+    height: width(0.3),
+    width: width(18),
     backgroundColor: '#fff'
   },
   borderOrLeft: {},
   borderOrRight: {},
   textOr: {
     fontFamily: APPFONT.RALEWAYNORMAL,
-    fontSize: width(7),
+    fontSize: width(3),
     color: '#fff', 
-  },
-  fbLogin: {
-    width: '100%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: width(20),
-    backgroundColor: '#3b5998'
-  },
-  btnLoginFb: {
-    flexDirection: 'row',
-    width: width(100),
-  },
-  iconFb: {
-    marginTop: width(0.5)
-  },
-  textFb: {
-    color: '#fff',
-    fontFamily: APPFONT.RALEWAYBOLD,
-    marginTop: width(2.5)
   },
   bottomScreen: {
     position: 'absolute',
-    bottom: width(20),
-    width: width(100),
+    width: '100%',
+    bottom: width(5),
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center'
   },
   textBottom: {
     color: '#fff',
-    fontSize: width(6),
+    fontSize: width(4),
     fontFamily: APPFONT.RALEWAYNORMAL
   },
   line: {
     color: '#fff',
-    fontSize: width(6),
+    fontSize: width(4),
     marginHorizontal: 5
   }
 });

@@ -1,11 +1,10 @@
 import { StyleSheet, Platform } from 'react-native';
-import { width, heightResize } from '../../../General/globalStyles';
+import { width, APPFONT } from '../../../General/globalStyles';
 const IOS = Platform.OS === 'ios';
-const heightNavBar = heightResize(IOS ? 11.5 : 8.5);
 
 const styles = StyleSheet.create({
   container: {
-    height: heightNavBar + heightResize(1),
+    height: width(IOS ? 17.5 : 11.5),
     width: width(100),
     justifyContent: 'center',
   },
@@ -17,6 +16,20 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     position: 'absolute'
+  },
+  titleStyle: {
+    alignItems: 'center',
+    alignContent: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    borderBottomWidth: width(0.3),
+    borderColor: 'rgba(228, 228, 228, 1)'
+  },
+  textTitle: {
+    fontFamily: APPFONT.RALEWAYBOLD,
+    marginTop: width(IOS ? 5 : 0),
+    color: '#333',
+    fontSize: width(3.5)
   },
   bgDefault: {
     flex: 1,
