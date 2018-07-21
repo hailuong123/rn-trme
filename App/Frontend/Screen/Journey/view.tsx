@@ -74,7 +74,6 @@ class Journey extends React.Component<Props, State> {
     const value = this.opacity._value;
     const value1 = this.opacity1._value;
 
-    console.log(value, value1)
     Animated.parallel([
       Animated.timing(this.opacity, {
         toValue: value === 1 ? 0 : 1,
@@ -99,23 +98,6 @@ class Journey extends React.Component<Props, State> {
         }
       }
     });
-    /*Animated.timing(this.opacity, {
-      toValue: 0.5,
-      duration: 2000,
-    }).start((eventFront: any) => {
-      if (eventFront.finished) {
-        this.setState({
-          backImg: sourceImage[index],
-          frontImg: sourceImage[index === sourceImage.length - 1 ? 0 : index + 1]
-        });
-        this.opacity1.setValue(0.5);
-
-        Animated.timing(this.opacity1, {
-          toValue: 1,
-          duration: 2000,
-        }).start()
-      }
-    });*/
   };
   
   resetAnimate = () => {
