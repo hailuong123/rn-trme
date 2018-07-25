@@ -4,15 +4,17 @@ import {
 } from 'react-native';
 
 interface Props {
-  onChange?: any;
-  onBlur?: any;
-  onFocus?: any;
+  inputRef?: string;
+  onChange?: Function;
+  onBlur?: Function;
+  onFocus?: Function;
   style?: any;
   styleicon?: any;
   placeHolder?: string;
   value?: string;
   secureTextEntry?: boolean;
   icon?: any;
+  autoFocus?: boolean;
 }
 
 interface State {
@@ -23,9 +25,11 @@ class BaseInput extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
     this.onChange = this.onChange.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onFocus = this.onFocus.bind(this);
   }
 
-  onChange = (event: any, ref: string) => {
+  onChange = (event: any, ref?: string) => {
     const { onChange } = this.props;
     if (onChange) {
       onChange(event, ref);

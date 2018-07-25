@@ -19,3 +19,6 @@ export const unlock = <EvilIcon name='unlock' size={width(7)} color={'#333'} />
 export const arrowRightCircle = <EvilIcon name='arrow-right' size={width(10)} color={'white'} />
 export const icFacebook = <EvilIcon name='sc-facebook' size={width(8)} color={'white'} />
 export const icSearch = <EvilIcon name='search' size={width(6)} color={'#333'} />
+export const icSearch10 = <EvilIcon name='search' size={width(10)} color={'#333'} />
+export const icClose = <EvilIcon name='close' size={width(6)} color={'#333'} />
+export const icClose10 = <EvilIcon name='close' size={width(10)} color={'#333'} />

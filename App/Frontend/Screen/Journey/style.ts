@@ -2,7 +2,7 @@ import {
   StyleSheet,
   Platform
 } from 'react-native';
-import { width } from '../../../General/globalStyles';
+import { width, APPFONT } from '../../../General/globalStyles';
 
 const ISIOS = Platform.OS === 'ios';
 
@@ -32,6 +32,10 @@ const styles = StyleSheet.create({
     borderRadius: 2,
     justifyContent: 'center',
   },
+  searchInnerModalSearch: {
+    borderColor: '#FFF',
+    marginTop: width(6),
+  },
   searchText: {
     fontSize: width(3.5),
     paddingLeft: width(10)
@@ -52,6 +56,29 @@ const styles = StyleSheet.create({
   slideImg: {
     resizeMode: 'cover',
     height: '100%'
+  },
+  filterContainer: {
+    position: 'absolute',
+    bottom: 0,
+    width: width(100),
+    zIndex: 2,
+    backgroundColor: '#FFF'
+  },
+  searchBox: {
+    marginTop: width(5),
+  },
+  textInput: {
+    height: width(15),
+    fontSize: width(5),
+    fontFamily: APPFONT.RALEWAYBOLD,
+    textAlign: 'center'
+  },
+  searchBorder: {
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(228, 228, 228, 1)',
+  },
+  btnClose: {
+    marginLeft: width(2)
   }
 });
 

@@ -9,7 +9,7 @@ import BaseInput from './BaseInput';
 
 class TMInputNormal extends BaseInput {
   render() {
-    const { placeHolder, value, secureTextEntry, onChange, onBlur, onFocus, icon, style, styleicon } = this.props;
+    const { placeHolder, value, secureTextEntry, icon, style, styleicon, autoFocus, inputRef } = this.props;
     return (
       <View>
         {
@@ -20,10 +20,12 @@ class TMInputNormal extends BaseInput {
           secureTextEntry={secureTextEntry}
           placeholder={placeHolder}
           value={value}
-          onChange={onChange}
-          onBlur={onBlur}
-          onFocus={onFocus}
+          onChange={this.onChange}
+          onBlur={this.onBlur}
+          onFocus={this.onFocus}
           style={style}
+          autoFocus={autoFocus}
+          ref={inputRef}
           underlineColorAndroid='transparent'
         />
       </View>
