@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
   },
   searchInnerModalSearch: {
     borderColor: '#FFF',
-    marginTop: width(6),
+    marginTop: width(2),
   },
   searchText: {
     fontSize: width(3.5),
@@ -64,6 +64,9 @@ const styles = StyleSheet.create({
     zIndex: 2,
     backgroundColor: '#FFF'
   },
+  filterResult: {
+
+  },
   searchBox: {
     marginTop: width(5),
   },
@@ -79,6 +82,22 @@ const styles = StyleSheet.create({
   },
   btnClose: {
     marginLeft: width(2)
+  },
+  filterList: {
+    paddingHorizontal: width(2)
+  },
+  filterInner: {
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(228, 228, 228, 1)',
+    paddingVertical: width(4)
+  },
+  filterItem: {
+    
+  },
+  filterText: {
+    fontSize: width(3.5),
+    color: '#333',
+    paddingLeft: width(13)
   }
 });
 

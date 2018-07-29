@@ -35,7 +35,7 @@ class CoreLayoutContainer extends React.Component<Props, State> {
         {
           bgScreen && 
             <View style={[styles.viewBg]}>
-              <Image 
+              <Image
                 style={styles.bgDefault} 
                 source={bgScreen} /> 
             </View>

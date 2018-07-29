@@ -4,6 +4,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import EvilIcon from 'react-native-vector-icons/EvilIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Entypo from 'react-native-vector-icons/Entypo';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import { width } from './globalStyles';
@@ -22,3 +23,8 @@ export const icSearch = <EvilIcon name='search' size={width(6)} color={'#333'} /
 export const icSearch10 = <EvilIcon name='search' size={width(10)} color={'#333'} />
 export const icClose = <EvilIcon name='close' size={width(6)} color={'#333'} />
 export const icClose10 = <EvilIcon name='close' size={width(10)} color={'#333'} />
+
+/* Entypo */
+export const icLocation = <Entypo name='location-pin' size={width(4)} color={'#333'} />
+export const icHome = <Entypo name='home' size={width(4)} color={'#333'} />
+

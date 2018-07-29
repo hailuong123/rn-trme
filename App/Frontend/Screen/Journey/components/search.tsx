@@ -3,9 +3,12 @@ import {
   View,
   Text,
   Animated,
-  TouchableOpacity
+  TouchableOpacity,
+  FlatList,
+  TouchableHighlight
 } from 'react-native';
-import { icClose10 } from '../../../../General/globalIcon';
+import { _keyExtractor } from '../../../../General/globalFunctions';
+import { icClose10, icLocation, icHome } from '../../../../General/globalIcon';
 import TMInput from '../../../Components/TMInput';
 import styles from '../style';
 
@@ -29,10 +32,20 @@ export default function Search (props: Props) {
     }
   }
 
+  const itemFilter = ({ item } : { item: any }) => (
+    <View style={[styles.filterList]}>
+      <View style={styles.filterInner}>
+        <TouchableHighlight>
+          <Text style={styles.filterItem}>{item.type === 'location' ? icLocation : icHome}{'   '}<Text style={styles.filterText}>{item.name}</Text></Text>
+        </TouchableHighlight>
+      </View>
+    </View>
+  )
+
   return (
     <Animated.View style={[styles.filterContainer, {height: pushUpFilter}]}>
       <View style={styles.searchBox}>
-        <View style={[styles.searchInner, styles.searchInnerModalSearch]}>
+        <View style={[styles.searchInnerModalSearch]}>
           <TouchableOpacity onPress={closeBoxSearch} style={styles.btnClose}>
             {icClose10}
           </TouchableOpacity>
@@ -45,6 +58,16 @@ export default function Search (props: Props) {
             />
           </View>
         </View>
+      </View>
+      <View style={styles.filterResult}>
+        {
+          resultFilter && 
+            <FlatList
+              renderItem={itemFilter}
+              data={resultFilter}
+              keyExtractor={_keyExtractor}
+            />
+        }
       </View>
     </Animated.View>
   );
